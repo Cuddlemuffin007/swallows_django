@@ -9,19 +9,13 @@ def create_data(apps, schema_editor):
     with open('/Users/brennon/PycharmProjects/yakult_swallows/player_data') as infile:
         file_reader = csv.reader(infile)
         rows = [row for row in file_reader]
+        headers = rows[0]
         batting_data = rows[1:]
 
     BattingStats = apps.get_model("swallows_app", "BattingStats")
     for row in batting_data:
-        BattingStats.objects.create(f_name=row[0], l_name=row[1],
-                                    age=row[2], g=row[3], pa=row[4],
-                                    ab=row[5], r=row[6], h=row[7],
-                                    _2b=row[8], _3b=row[9], hr=row[10],
-                                    rbi=row[11], sb=row[12], cs=row[13],
-                                    bb=row[14], so=row[15], ba=row[16],
-                                    obp=row[17], slg=row[18], ops=row[19],
-                                    tb=row[20], gdp=row[21], hbp=row[22],
-                                    sh=row[23], sf=row[24], ibb=row[25])
+        col_val_list = list(zip(headers, row))
+        BattingStats.objects.create(**dict(col_val_list))
 
 class Migration(migrations.Migration):
 
