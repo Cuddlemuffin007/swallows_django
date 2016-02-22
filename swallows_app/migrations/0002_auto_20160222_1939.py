@@ -14,8 +14,7 @@ def create_data(apps, schema_editor):
 
     BattingStats = apps.get_model("swallows_app", "BattingStats")
     for row in batting_data:
-        col_val_list = list(zip(headers, row))
-        BattingStats.objects.create(**dict(col_val_list))
+        BattingStats.objects.create(**dict(zip(headers, row)))
 
 class Migration(migrations.Migration):
 
