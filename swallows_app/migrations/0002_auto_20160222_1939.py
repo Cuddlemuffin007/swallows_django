@@ -4,8 +4,6 @@ from __future__ import unicode_literals
 
 from django.db import migrations
 import csv
-from swallows_app.models import BattingStats
-
 
 def create_data(apps, schema_editor):
     with open('/Users/brennon/PycharmProjects/yakult_swallows/player_data') as infile:

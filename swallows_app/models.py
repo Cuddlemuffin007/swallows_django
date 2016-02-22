@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class BattingStats(models.Model):
+class BattingStat(models.Model):
     f_name = models.CharField(max_length=20)
     l_name = models.CharField(max_length=30)
     age = models.IntegerField()
