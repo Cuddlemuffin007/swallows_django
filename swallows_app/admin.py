@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from swallows_app.models import BattingStat
+
+
+admin.site.register(BattingStat)

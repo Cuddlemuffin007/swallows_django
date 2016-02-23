@@ -28,3 +28,6 @@ class BattingStat(models.Model):
     sh = models.IntegerField()
     sf = models.IntegerField()
     ibb = models.IntegerField()
+
+    def __str__(self):
+        return "{} {}".format(self.f_name, self.l_name)

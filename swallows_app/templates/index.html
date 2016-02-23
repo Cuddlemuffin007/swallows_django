@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swallows Batting Stats 2015</title>
+    <style>
+        table {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin: 2em auto; color: #33c; text-align: center">2015 Tokyo Yakult Swallows Batting Statistics</h1>
+    {% autoescape off %}
+        {{ players }}
+    {% endautoescape %}
+</body>
+</html>
