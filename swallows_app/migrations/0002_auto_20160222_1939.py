@@ -6,7 +6,7 @@ from django.db import migrations
 import csv
 
 def create_data(apps, schema_editor):
-    with open('swallows_app/player_data') as infile:
+    with open('player_data') as infile:
         file_reader = csv.reader(infile)
         rows = [row for row in file_reader]
         headers = rows[0]
